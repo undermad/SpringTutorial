@@ -10,6 +10,8 @@
     <!--ADD COMPONENT SCANNING-->
 
     <context:component-scan base-package="tutorial.spring"/>
+    <context:property-placeholder location="coach.properties"/>
+
 
 
 </beans>

@@ -5,18 +5,14 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TennisCoach implements Coach {
-
-    private FortuneService fortuneService;
-
+public class FieldInjectionCoach implements Coach {
     @Autowired
-    public TennisCoach(@Qualifier("happyFortuneDay") FortuneService fortuneService) {
-        this.fortuneService = fortuneService;
-    }
+    @Qualifier("amazingFortuneNight")
+    private FortuneService fortuneService;
 
     @Override
     public String getDailyCoach() {
-        return "Amazing coach with Iga Swiatek!";
+        return "Isn't amazing?";
     }
 
     @Override
